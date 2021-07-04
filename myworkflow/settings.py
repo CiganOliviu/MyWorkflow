@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'learning',
     'organizations',
     'projects',
+    'activities',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
