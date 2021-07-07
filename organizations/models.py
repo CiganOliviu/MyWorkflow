@@ -15,5 +15,10 @@ class GithubOrganization(models.Model):
 
 
 class BusinessModel(models.Model):
-    pass
+    name = models.CharField(max_length=50, default="None")
+    posture = models.CharField(max_length=50, default="None")
+    description = models.TextField(default="None")
+
+    def __str__(self):
+        return self.name
 
