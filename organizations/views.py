@@ -4,14 +4,14 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from organizations.models import Organization
+from organizations.models import GithubOrganization
 from organizations.serializers import OrganizationsSerializer
 
 
 class OrganizationsLister(APIView):
 
     def get(self, request, format=None):
-        organization = Organization.objects.all()
+        organization = GithubOrganization.objects.all()
         serializer = OrganizationsSerializer(organization, many=True)
 
         return Response(serializer.data)
@@ -31,7 +31,7 @@ class OrganizationsDetails(APIView):
 
     def get_post(self, pk):
         try:
-            return Organization.objects.get(pk=pk)
+            return GithubOrganization.objects.get(pk=pk)
         except:
             raise Http404
 

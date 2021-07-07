@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Organization
+from .models import GithubOrganization
 
 
 class OrganizationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'location', 'gmail', 'url')
+    list_display = ('name', 'location', 'gmail', 'website_url')
 
 
-admin.site.register(Organization, OrganizationAdmin)
+admin.site.register(GithubOrganization, OrganizationAdmin)

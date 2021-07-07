@@ -4,5 +4,5 @@ from rest_framework import serializers
 
 class OrganizationsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Organization
+        model = GithubOrganization
         fields = '__all__'
